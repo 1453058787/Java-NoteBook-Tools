@@ -18,7 +18,7 @@ _这里是文字_
 
 ### 1.3 链接
 
-![测试一下图片](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/apic27858.jpeg)
+![测试一下图片](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/图片/apic27858.jpeg)
 
 ### 1.4 分割线
 
@@ -119,25 +119,25 @@ public class Main {
 
 \*
 
-![fuhao](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/符号.png)
+![fuhao](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/图片/符号.png)
 
 （2）其他特殊字符，示例如下：
 
-![特殊符号](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/特殊符号.png)
+![特殊符号](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/图片/特殊符号.png)
 
 想知道字符对应的Unicode码，可以看这个网站：https://unicode-table.com/cn/
 
 ### 2.4  字体、字号与颜色
 
-![](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/字体、色号等.png)
+![](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/图片/字体、色号等.png)
 
 <font color="DC143c">我是红色字体</font>
 
-<img src="/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/字体颜色二进制码.png" style="zoom:50%;" />
+<img src="/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/图片/字体颜色二进制码.png" style="zoom:50%;" />
 
 ### 2.5链接的高级操作
 
-<img src="/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/apic27858.jpeg" style="zoom:25%;" />[test]
+<img src="/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/图片/apic27858.jpeg" style="zoom:25%;" />[test]
 
 
 

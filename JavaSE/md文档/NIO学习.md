@@ -20,7 +20,7 @@
 
 与阻塞I/O模型相反，在非阻塞I/O模型之下，应用进程与内核交互，目的未达到时，不再一味的等着，而是直接返回。然后通过轮询的方式，不停地去问内核数据准备好没有
 
-![img](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/阻塞I:O模型图.png)
+![img](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/图片//阻塞I:O模型图.png)
 
    上图中，应用进程通过recvfrom系统调用不停的去和内核交互，直到内核准备好数据报，从上面的流程中可以看出来，应用进程进入轮询状态时等同于阻塞状态，所以阻塞的I/O似乎并没有提高进程工作效率
 
@@ -34,7 +34,7 @@
 
 select 有三个文件描述符集（readfds），分别是可读文件描述符集（writefds）、可写文件描述符集和异常文件描述符集（exceptfds）。应用程序可将某个 socket （文件描述符）设置到感兴趣的文件描述符集中，并调用 select 等待所感兴趣的事件发生。比如某个 socket 处于可读状态了，此时应用进程就可调用 recvfrom 函数把数据从内核空间拷贝到进程空间内，无需再等待内核准备数据了。示意图如下：
 
-![img](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/select复用模型.png)
+![img](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/图片/select复用模型.png)
 
 一般情况下，应用进程会将多个 socket 设置到感兴趣的文件描述符集中，并调用 select 等待所关注的事件（比如可读、可写）处于就绪状态。当某些 socket 处于就绪状态后，select 返回处于就绪状态的 sockct 数量。注意这里返回的是 socket 的数量，并不是具体的 socket。应用程序需要自己去确定哪些 socket 处于就绪状态了，确定之后即可进行后续操作。
 
@@ -42,7 +42,7 @@ I/O 复用本身不是很好理解，所以这里还是举例说明吧。话说�
 
 上面的流程可能有点啰嗦，所以还是看图吧。
 
-![img](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/select复用模型举例.png)
+![img](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/图片/select复用模型举例.png)
 
 把上面的流程进行分步，如下：
 
@@ -63,7 +63,7 @@ I/O 复用本身不是很好理解，所以这里还是举例说明吧。话说�
 
 信号驱动式I/O模型是指，应用程序告诉内核，如果某一个socket的某个事件发生时，请向我发一个信号。在收信号后，信号对应的处理函数会进行后续处理。示意图如下
 
-![img](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/信号驱动式模型图.png)
+![img](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/图片/信号驱动式模型图.png)
 
 再用之前的例子说明。某个运维同学比较聪明，他些了一个监控系统。重启服务的过程由监控系统来做，做好以后，监控系统会给他发个通知。在此之前运维同学可以去做其他的事情，不用一直发呆等着了。运维同学收到通知后，首先去检查服务重启情况，接着再给开发同学回复邮件就行了
 
@@ -73,7 +73,7 @@ I/O 复用本身不是很好理解，所以这里还是举例说明吧。话说�
 
 异步I/O 是指应用进程把文件描述传给内核后，啥都不管了，完全由内核去操作这个文件描述符。内核完成相关操作以后，会发信号告诉应用进程，某某I/O操作我完成了，你现在可以进行后续操作了，示意图如下：
 
-![img](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/异步I:O模型图.png)
+![img](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/图片/异步I:O模型图.png)
 
 上图通过 aio_read 把文件描述符、数据缓存空间，以及信号告诉内核，当文件描述符处于可读状态时，内核会亲自将数据从内核空间拷贝到应用进程指定的缓存空间呢。拷贝完在告诉进程 I/O 操作结束，你可以直接使用数据了。
 
@@ -89,7 +89,7 @@ I/O 复用模型结果数次改进，目前性能已经很好了，也得到了�
 
 最后附一张几种I/O模型的对比图：
 
-![img](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/I:O模型对比图.png)
+![img](/Users/wjay/devTools/Git_Repository/Java-NoteBook-Tools/JavaSE/图片/I:O模型对比图.png)
 
 # 6.0 结语
 
